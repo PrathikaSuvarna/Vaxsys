@@ -13,6 +13,50 @@
   </head>
 <body>
   <script src="js/myscript.js"></script>
+  <script language="javascript" type="text/javascript">
+    function dynamicdropdown(listindex)
+    {
+        switch (listindex)
+        {
+        case "Moderna-Covid-19" :
+            document.getElementById("status").options[1]=new Option("ByWard Family Health Team (BWFHT) - Travel Medicine Clinic");
+            document.getElementById("status").options[2]=new Option("CHEO - Children's Immunization Clinic");
+            break;
+        case "Astrazeneca-Covid-19" :
+            document.getElementById("status").options[1]=new Option("Ottawa. City Operations - Ottawa Public Health");
+            break;
+        case "HPV-Human Papillomavirus" :
+            document.getElementById("status").options[1]=new Option("Barrhaven Travel Medicine Clinic");
+            document.getElementById("status").options[2]=new Option("Centrepointe Medical Consultants - Nepean");
+            break;
+        case "Tetanus" :
+            document.getElementById("status").options[1]=new Option("Riverside Travel Medicine Clinic");
+            document.getElementById("status").options[2]=new Option("Ottawa West Travel Medicine Clinic");
+            document.getElementById("status").options[2]=new Option("Centrepointe Medical Consultants - Nepean");
+            break;
+        case "Hepatitus-A" :
+            document.getElementById("status").options[1]=new Option("Centrepointe Medical Consultants - Nepean");
+            break;
+        case "Chicken Pox" :
+            document.getElementById("status").options[1]=new Option("Ottawa West Travel Medicine Clinic");
+            document.getElementById("status").options[2]=new Option("Centrepointe Medical Consultants - Nepean");
+            break;
+        case "Hepatitus-B" :
+            document.getElementById("status").options[1]=new Option("ByWard Family Health Team (BWFHT) - Travel Medicine Clinic");
+            document.getElementById("status").options[2]=new Option("Centrepointe Medical Consultants - Nepean");
+            break;
+        case "Typhoid" :
+            document.getElementById("status").options[1]=new Option("Ottawa West Travel Medicine Clinic");
+            document.getElementById("status").options[2]=new Option("Barrhaven Travel Medicine Clinic");
+            break;
+        case "Yellow Fever" :
+            document.getElementById("status").options[1]=new Option("Canada. Public Health Agency of Canada - Yellow Fever Vaccination Centres in Canada");
+            break;
+
+        }
+        return true;
+    }
+    </script>
 
 <div
 class=".bg-image d-flex justify-content-center align-items-center"
@@ -26,9 +70,9 @@ style="
 " 
 >
 
-    <div class="container-fluid">
+    <div class="container-fluid"> <br>
       <b><h1 class="text-center" style="color:rgb(255, 255, 255); font-size: 45px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  -webkit-text-stroke: 2px black;">BOOK YOUR APPOINTMENT</h1></b>
-        <br>
+       
       <div class="row justify-content-center align-items-center window-height">
             <div class="col-md-4">
                 <form>
@@ -36,12 +80,25 @@ style="
                 <div class="card shadow">
         
                 <div class="card-body">
-                  <div class="form-row">
-                    <div class="col">
-                      <label for="inputPassword4">Vaccine Name: </label>
-                      
-                    </div>
+                  <div class="form-row">               
+                    <div class="form-group col">
+                      <label for="inputgender">Select Vaccine </label>
+                      <select id="inputgender" class="form-control" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+                      <option selected>Choose...</option>
+                
+                      <option>Moderna-Covid-19</option>
+                      <option>Astrazeneca-Covid-19</option>
+                      <option>HPV-Human Papillomavirus</option>
+                      <option>Tetanus</option>
+                      <option>Hepatitus-A </option>
+                      <option>Chicken Pox</option>
+                      <option>Hepatitus-B</option>
+                      <option>Typhoid</option>
+                      <option>Yellow Fever</option>
+                      </select>
+                  
                   </div>
+              </div>
 
                     <div class="form-row">
                       
@@ -61,24 +118,14 @@ style="
                       </div>
                     </div>
                     <div class="form-row">               
-                        <div class="form-group col">
-                          <label for="inputgender">Vaccine Center</label>
-                          <select id="inputgender" class="form-control">
-                          <option selected>Choose...</option>
+                      <div class="form-group col">
+                        <label for="inputgender">Vaccine Center</label>
+                        <select id="status" class="form-control" name="status">
+                          <option value="">Choose..</option>
+                        </select>
                     
-                          <option>Barrhaven Travel Medicine Clinic</option>
-                          <option>ByWard Family Health Team (BWFHT) - Travel Medicine Clinic</option>
-                          <option>Canada. Public Health Agency of Canada - Yellow Fever Vaccination Centres in Canada </option>
-                          <option>Centrepointe Medical Consultants - Nepean</option>
-                          <option>Ottawa. City Operations - Ottawa Public Health </option>
-                          <option>Riverside Travel Medicine Clinic</option>
-                          <option>CHEO - Children's Immunization Clinic</option>
-                          <option>Ottawa West Travel Medicine Clinic</option>
-                 
-                          </select>
-                      
-                      </div>
-                  </div>
+                    </div>
+                </div>
 
                     <div class="form-row">
                       <div class="col">
@@ -100,7 +147,11 @@ style="
             </div>
         </div>
     </div>
+    <div class="text-left">
+      <a class="btn btn-secondary" href="VaccineList.html">Back</a>
+      </div>
 </div>
-  <a class="btn btn-link" href="Availability.html" >Back</a>
+
+
 </body>
 </html>
